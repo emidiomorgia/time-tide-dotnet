@@ -5,10 +5,9 @@ on:
   # Automatically trigger it when detected changes in repo
   push:
     branches: 
-      [ main ]
+      [ release ]
     paths:
     - '/src/Bff.Web/**'
-    - '.github/workflows/time-tide-dotnet-bff-AutoDeployTrigger-01055cfa-1508-4e15-8037-7a31386f5fae.yml'
 
   # Allow manual trigger 
   workflow_dispatch:

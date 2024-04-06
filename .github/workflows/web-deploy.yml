@@ -3,13 +3,13 @@ name: Azure Static Web Apps CI/CD
 on:
   push:
     branches:
-      - 'ver.*'
+      [ release ]
     paths:
       - 'src/Web/time-tide-dotnet/**'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - 'ver.*'
+      [ release ]
 
 jobs:
   build_and_deploy_job:
