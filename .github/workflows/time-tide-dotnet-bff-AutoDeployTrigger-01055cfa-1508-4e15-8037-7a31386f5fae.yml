@@ -1,0 +1,43 @@
+name: Trigger auto deployment for time-tide-dotnet-bff
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ main ]
+    paths:
+    - '/src/Bff.Web/DockerFile/**'
+    - '.github/workflows/time-tide-dotnet-bff-AutoDeployTrigger-01055cfa-1508-4e15-8037-7a31386f5fae.yml'
+
+  # Allow manual trigger 
+  workflow_dispatch:
+      
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.TIMETIDEDOTNETBFF_AZURE_CREDENTIALS }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }}/src/Bff.Web/DockerFile 
+          registryUrl: docker.io
+          registryUsername: ${{ secrets.TIMETIDEDOTNETBFF_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.TIMETIDEDOTNETBFF_REGISTRY_PASSWORD }}
+          containerAppName: time-tide-dotnet-bff
+          resourceGroup: time-tide-dotnet-group
+          imageToBuild: emidio78/emidio78/time-tide-dotnet-bff:${{ github.sha }}
+          
+            
+
+     
+
