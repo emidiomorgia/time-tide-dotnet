@@ -1,4 +1,4 @@
-name: SonarCloud
+name: SonarCloud BFF
 on:
   push:
     branches:
