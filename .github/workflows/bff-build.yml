@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'src/Bff.Web/**'
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
