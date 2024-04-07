@@ -7,7 +7,7 @@ on:
     branches: 
       [ release ]
     paths:
-    - 'src/Identity/**'
+      - 'src/Identity/**'
 
   # Allow manual trigger 
   workflow_dispatch:
