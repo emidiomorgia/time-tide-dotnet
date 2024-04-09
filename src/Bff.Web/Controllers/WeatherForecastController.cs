@@ -8,7 +8,7 @@ namespace Bff.Web.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "1aFreezing", "a1aBracing", "a1aChilly", "a1aCool", "a1aMild", "a1aWarm", "a1aBalmy", "a1aHot", "a1aSweltering", "a1aScorching"
+            "a", "b", "c", "d", "e", "f", "g", "i", "aa", "bb"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;

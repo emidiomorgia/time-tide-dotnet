@@ -8,7 +8,7 @@ namespace Identity.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "aFreezing", "aBracing", "aChilly", "aCool", "aMild", "aWarm", "aBalmy", "aHot", "aSweltering", "aScorching"
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
