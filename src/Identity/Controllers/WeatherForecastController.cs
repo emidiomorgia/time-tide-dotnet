@@ -8,7 +8,7 @@ namespace Identity.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+            "1", "2", "3", "4", "5", "6", "7", "8", "9", "10","11"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
